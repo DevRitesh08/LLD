@@ -1,4 +1,4 @@
-# LLD vs HLD — Interview‑Ready Guide
+# LLD vs HLD — Guide
 
 > HLD defines system structure; LLD defines code structure.
 
@@ -24,7 +24,7 @@
   - API surface (endpoints, contracts at a high level)
   - Tech choices (DB, cache, broker, frameworks) and trade‑offs
 
-### Interview-Ready Definition
+### Definition
 
 > High‑Level Design (HLD) describes the overall system architecture — its major components, data flow, and external interfaces — without going into code‑level implementation details.
 
@@ -41,7 +41,7 @@
   - Design patterns (Strategy, Factory, Observer, etc.)
   - Pseudo‑code, state transitions, edge cases, invariants
 
-### Interview-Ready Definition
+### Definition
 
 > Low‑Level Design (LLD) specifies the detailed structure and behavior at the code level — classes, interfaces, methods, data structures, and interactions needed to implement the system.
 
@@ -62,11 +62,13 @@
 ## 5) Example: Food Delivery App
 
 ### HLD decides (what & how components interact)
+
 - Services: User, Restaurant, Catalog, Order, Payment, Delivery, Notification.
 - Data flow: Client → API Gateway → Services → DB/Cache → External Integrations (Payments, SMS, Push).
 - Cross‑cutting: AuthN/Z, rate limiting, monitoring, logging, fault tolerance, scaling.
 
 ### LLD decides (code‑level structure)
+
 - `User`, `Restaurant`, `MenuItem`, `Cart`, `Order`, `DeliveryAssignment` classes.
 - `Order` lifecycle: Created → Confirmed → Preparing → Out‑for‑Delivery → Delivered/Cancelled (state transitions).
 - Interfaces:
@@ -88,6 +90,7 @@
 - Eases onboarding and code reviews.
 
 ### Trade‑offs
+
 - Time‑intensive for small/simple features.
 - Risk of over‑design if scope is small.
 - Requires strong OOP and pattern literacy.
@@ -190,8 +193,3 @@ public final class PaymentService {
 - Keep LLD implementable and testable; avoid gold‑plating.
 
 ---
-
-Need a deep‑dive next? We can add:
-- A full LLD walkthrough for one practice prompt
-- Common LLD pitfalls with examples
-- A printable one‑pager summary
